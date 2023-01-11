@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Code Generator</title>
+    <script>
+      function generateQRCode() {
+        var url = document.getElementById("url").value;
+        if (url) {
+          document.getElementById("qr-code").src = "/qr-code?url=" + url;
+        } else {
+          alert("Please enter a URL.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>QR Code Generator</h1>
+    <form>
+      <label for="url">URL:</label>
+      <input type="text" id="url">
+      <button type="button" onclick="generateQRCode()">Generate QR Code</button>
+    </form>
+    <br>
+    <img id="qr-code" src="">
+  </body>
+</html>
